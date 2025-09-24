@@ -3,150 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usain - Soluções Digitais</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Sabrina Santos</title>
+    <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="shortcut icon" href="images/simple_usain.png" type="image/x-icon">
+    <link rel="shortcut icon" href="style/images/favicon.png" type="image/x-icon">
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
+
 <body>
     <!-- Cabeçalho -->
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">Usa<span>in</span></a>
-            <nav>
+            <a href="#" class="logo">Sabrina<span>Santos</span></a>
+
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav id="navbar">
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#portfolio">Portfólio</a></li>
-                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#technologies">Technologies</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#diplomas">Diplomas</a></li>
+                    <li><a href="#contacts">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!--Hero-->
-   <section class="hero" id="home">
+<!-- Hero -->
+<section class="hero" id="home">
     <div class="container hero-content">
-        <div class="hero-text">
-            <h1>Soluções Digitais que Aceleram seu Negócio</h1>
-            <p>A Usain combina desenvolvimento web de alta performance e estratégias de mídia social para impulsionar sua presença digital.</p>
-            <a href="#contato" class="btn">Fale Conosco</a>
-        </div>
         <div class="hero-image">
-            <img src="images/undraw_our-solution_qv3b.svg" alt="Ilustração Dev">
+            <img src="style/images/hero-image.png" alt="Ilustração Dev">
+        </div>
+        <div class="hero-text">
+            <h1>Software Engineer</h1>
+            <p>I'm currently studying software engineering, with expertise in scalable systems planning and full-stack development with Java. I have practical experience in both academic and personal projects, where I've been able to apply front-end and back-end concepts. I'm looking for my first professional opportunity to grow and contribute to the team.</p>
+
+            <a href="sabrinaoliveira-estagio.pdf" download class="svg-btn download-link">
+                <svg viewBox="0 0 220 60" width="220" height="60" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="6" y="6" width="208" height="48" rx="12" ry="12" fill="none" stroke="#000" stroke-width="4"/>
+                    <path d="M18 20 Q50 12 100 22 T202 33" fill="none" stroke="#000" stroke-width="2" opacity="0.25"/>
+                </svg>
+                <span class="label">Download CV</span>
+            </a>
         </div>
     </div>
 </section>
 
-    <!-- Serviços -->
-    <section class="services" id="servicos">
-        <div class="container">
+
+<!-- About -->
+<section class="about-me" id="about">
+    <div class="container about-content">
+        <div class="about-text">
             <div class="section-title">
-                <h2>Nossos Serviços</h2>
-                <p>Oferecemos soluções completas para transformar sua presença digital</p>
+                <h2>About Me</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam voluptatibus incidunt magnam molestiae ab omnis fuga odio perferendis illum beatae libero est temporibus repellendus quam voluptatem quae, consequuntur natus veniam.</p>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Desenvolvimento Web</h3>
-                    <p>Sistemas web personalizados, sites institucionais e e-commerces desenvolvidos com as melhores tecnologias do mercado.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Social Media</h3>
-                    <p>Gestão completa de redes sociais, criação de conteúdo estratégico e campanhas patrocinadas para aumentar seu alcance.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Marketing Digital</h3>
-                    <p>Estratégias personalizadas para aumentar sua visibilidade online, gerar leads e converter em vendas.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sobre -->
-    <section class="about" id="sobre">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Sobre a Usain</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus qui aperiam natus maxime molestiae tenetur asperiores eius nihil quam maiores dicta earum sequi non, doloremque dolores dolorem, ipsum, quasi dolorum.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi laborum temporibus reiciendis aspernatur facilis. Enim harum vel quibusdam iure corrupti repellendus, rem nisi eius culpa suscipit autem libero minus. Omnis.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit similique veniam molestias aperiam id, quibusdam, est, repudiandae voluptatum sed dolor quod repellendus cumque tempore non odit! Veritatis hic necessitatibus amet?</p>
-                </div>
-                <div class="about-image">
-                    <img src="images/sabrina_gabriel.png" alt="Equipe Usain">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfólio -->
-    <section class="portfolio" id="portfolio">
-        <div class="container">
-            <div class="section-title">
-                <h2>Nosso Portfólio</h2>
-                <p>Alguns dos projetos que desenvolvemos para nossos clientes</p>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Projeto 1">
-                    <div class="portfolio-overlay">
-                        <h3>E-commerce Fashion</h3>
-                        <p>Plataforma de e-commerce completa para marca de moda</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Projeto 2">
-                    <div class="portfolio-overlay">
-                        <h3>Campanha Digital</h3>
-                        <p>Estratégia de mídias sociais para restaurante gourmet</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Projeto 3">
-                    <div class="portfolio-overlay">
-                        <h3>Sistema de Gestão</h3>
-                        <p>Sistema web personalizado para clínica médica</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Formulario -->
-    <section class="contact-section" id="contato">
-        <div class="section-title">
-                <h2>Formulário</h2>
-                <p>Preencha com seus dados que entraremos em contato com você!</p>
-            </div>
-        <div class="contact-machine-wrapper">
-    <div class="form-container">
-        <label class="form-row">
-            <input autocomplete="one-time-code" type="text" id="name" name="name" placeholder="Nome" required>
-        </label>
-        <label class="form-row">
-            <input autocomplete="one-time-code" type="email" id="email" name="email" placeholder="Email" required >
-        </label>
-        <label class="form-row">
-            <input type="checkbox" id="subscribe" name="subscribe"> Receber novidades
-        </label>
-        <div class="form-row">
-            <input type="submit" value="Enviar">
+            <!-- Conteúdo adicional pode vir aqui -->
         </div>
     </div>
+    
+    <!-- Infinite Carousel -->
+    <div class="icon-carousel">
+        <div class="carousel-track">
+            <!-- coloque os ícones/font awesome aqui -->
+            <i class="fab fa-html5"></i>
+            <i class="fab fa-css3-alt"></i>
+            <i class="fab fa-js"></i>
+            <i class="fab fa-java"></i>
+            <i class="fab fa-git-alt"></i>
+            <!-- repete de novo para dar o efeito infinito -->
+            <i class="fab fa-html5"></i>
+            <i class="fab fa-css3-alt"></i>
+            <i class="fab fa-js"></i>
+            <i class="fab fa-java"></i>
+            <i class="fab fa-git-alt"></i>
 
-    <svg viewBox="0 0 1000 1000" stroke-linecap="round" stroke-linejoin="round">
+            <i class="fab fa-html5"></i>
+            <i class="fab fa-css3-alt"></i>
+            <i class="fab fa-js"></i>
+            <i class="fab fa-java"></i>
+            <i class="fab fa-git-alt"></i>
+
+            <i class="fab fa-html5"></i>
+            <i class="fab fa-css3-alt"></i>
+            <i class="fab fa-js"></i>
+            <i class="fab fa-java"></i>
+            <i class="fab fa-git-alt"></i>
+
+            <i class="fab fa-html5"></i>
+            <i class="fab fa-css3-alt"></i>
+            <i class="fab fa-js"></i>
+            <i class="fab fa-java"></i>
+            <i class="fab fa-git-alt"></i>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio -->
+
+
+<!-- Diplomas -->
+<section class="diplomas" id="diplomas">
+    <div class="section-title">
+        <h2>Diplomas</h2>
+        <p>Certificados e conquistas acadêmicas.</p>
+    </div>
+    <div class="diploma-list">
+    <div class="diploma-card">
+        <i class="fas fa-certificate"></i>
+        <p>IBM Java Developer - Coursera</p>
+    </div>
+    <div class="diploma-card">
+        <i class="fas fa-certificate"></i>
+        <p>Certificação HTML & CSS - Curso em Vídeo</p>
+    </div>
+    <div class="diploma-card">
+        <i class="fas fa-certificate"></i>
+        <p>Bacharelado em Análise e Desenvolvimento de Sistemas</p>
+    </div>
+    </div>
+</section>
+
+<!-- Portfolio -->
+<section class="portfolio" id="portfolio">
+    <div class="container">
+        <div class="section-title">
+            <h2>Portfolio</h2>
+            <p>Alguns dos meus trabalhos e projetos criativos.</p>
+        </div>
+        
+        <div class="portfolio-carousel">
+            <div class="carousel-wrapper">
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="portfolio-item carousel-slide">
+                            <div class="slide-image">
+                                <img src="style/images/panapana.png" alt="Projeto 1">
+                                <div class="slide-overlay">
+                                    <a href="#" class="view-project">Ver Projeto</a>
+                                </div>
+                            </div>
+                            <div class="slide-content">
+                                <h3>Projeto 1</h3>
+                                <p>Descrição breve do projeto e tecnologias utilizadas</p>
+                                <div class="tech-tags">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JS</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="portfolio-item carousel-slide">
+                            <div class="slide-image">
+                                <img src="images/project2.png" alt="Projeto 2">
+                                <div class="slide-overlay">
+                                    <a href="#" class="view-project">Ver Projeto</a>
+                                </div>
+                            </div>
+                            <div class="slide-content">
+                                <h3>Projeto 2</h3>
+                                <p>Descrição breve do projeto e tecnologias utilizadas</p>
+                                <div class="tech-tags">
+                                    <span>React</span>
+                                    <span>Node.js</span>
+                                    <span>MongoDB</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="portfolio-item carousel-slide">
+                            <div class="slide-image">
+                                <img src="images/project3.png" alt="Projeto 3">
+                                <div class="slide-overlay">
+                                    <a href="#" class="view-project">Ver Projeto</a>
+                                </div>
+                            </div>
+                            <div class="slide-content">
+                                <h3>Projeto 3</h3>
+                                <p>Descrição breve do projeto e tecnologias utilizadas</p>
+                                <div class="tech-tags">
+                                    <span>Vue.js</span>
+                                    <span>Python</span>
+                                    <span>PostgreSQL</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Adicione mais projetos -->
+                        <div class="portfolio-item carousel-slide">
+                            <div class="slide-image">
+                                <img src="images/project4.png" alt="Projeto 4">
+                                <div class="slide-overlay">
+                                    <a href="#" class="view-project">Ver Projeto</a>
+                                </div>
+                            </div>
+                            <div class="slide-content">
+                                <h3>Projeto 4</h3>
+                                <p>Descrição breve do projeto e tecnologias utilizadas</p>
+                                <div class="tech-tags">
+                                    <span>Angular</span>
+                                    <span>Java</span>
+                                    <span>MySQL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Controles mais elegantes -->
+                <button class="carousel-nav carousel-prev" aria-label="Projeto anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-nav carousel-next" aria-label="Próximo projeto">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <!-- Indicadores modernos -->
+            <div class="carousel-indicators">
+                <!-- Gerado via JavaScript -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Formulario -->
+
+<section class="contact-section" id="contacts">
+    <div class="section-title">
+        <h2>Formulário</h2>
+        <p>Preencha com seus dados que entraremos em contato com você!</p>
+    </div>
+    <div class="contact-machine-wrapper">
+        <!-- Altere o formulário para: -->
+        <form class="form-container" netlify name="contact" method="POST" data-netlify="true">
+
+            <input type="hidden" name="form-name" value="contact">
+
+
+            <label class="form-row">
+                <input type="text" id="name" name="name" placeholder="Nome" required>
+            </label>
+            <label class="form-row">
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </label>
+            <label class="form-row">
+                <input type="text" id="subject" name="subject" placeholder="Assunto" required>
+            </label>
+            <label class="form-row">
+                <input type="checkbox" id="subscribe" name="subscribe" required> 
+                <span>Meus dados estão corretos!</span>
+            </label>
+            
+            <div class="form-row">
+                <button type="submit" class="submit-btn">Enviar</button>
+            </div>
+            <div id="form-message" style="display: none; margin-top: 10px; padding: 10px; border-radius: 5px;"></div>
+        </form>
+        
+        
+        <svg viewBox="0 0 1000 1000" stroke-linecap="round" stroke-linejoin="round">
 
         <rect x="710" y="527" width="16" height="47" rx="10" ry="10"></rect>
 
@@ -302,21 +427,26 @@
         </g>
 
     </svg>
-</div>
-    </section>
+    </div>
+</section>
     <!-- Rodapé -->
     <footer>
         <div class="container footer-content">
-            <p>&copy; 2025 Usain - Todos os direitos reservados</p>
+            <p>&copy; 2025 Sabrina Santos - All rights reserved</p>
             <div class="social-links">
                 <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 <a href="#"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
     </footer>
-    <script src="form_animated.js"></script>
-    <script src="hero.js"></script>
+    <script src="scripts/form_animated.js"></script>
+    <script src="scripts/btn-animation.js"></script>
+    <script src="scripts/menu.js"></script>
+    <script src="scripts/download.js"></script>
+    <script src="scripts/port-carrosel.js"></script>
+    <script src="scripts/php/form-handler.js"></script>
+    <script src="scripts/form-submit.js"></script>
 </body>
 </html>

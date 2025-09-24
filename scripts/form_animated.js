@@ -1,5 +1,6 @@
 const containerEl = document.querySelector('.container');
 const checkboxEl = document.querySelector('.form-container .form-row input[type="checkbox"]');
+const subjectEl = document.querySelector('.form-container .form-row input[name="subject"]');
 const nameEl = document.querySelector('.form-container .form-row input[name="name"]');
 const emailEl = document.querySelector('.form-container .form-row input[name="email"]');
 const submitBtn = document.querySelector('.form-container .form-row input[type="submit"]');
@@ -67,6 +68,7 @@ const state = {
 }
 let nameValid = false;
 let emailValid = false;
+let subjectValid = false;
 
 const emailTl = createEmailTl();
 const gearsTls = createGearsTimelines();
@@ -109,6 +111,15 @@ nameEl.addEventListener('input', () => {
             color: "rgba(0, 0, 0, " + 0 + ")"
         })
     }
+        subjectEl.addEventListener('input', () => {
+        subjectValid = subjectEl.value.length > 2; // pelo menos 3 caracteres
+        if (subjectValid) {
+            subjectEl.classList.add("valid");
+        } else {
+            subjectEl.classList.remove("valid");
+        }
+});
+
 })
 
 emailEl.addEventListener('input', () => {
@@ -124,7 +135,7 @@ emailEl.addEventListener('input', () => {
 })
 
 submitBtn.addEventListener('click', () => {
-    if (emailValid && checkboxEl.checked && nameValid && sprayRepeatCounter > 1) {
+    if (nameValid && emailValid && subjectValid && checkboxEl.checked && sprayRepeatCounter > 1) {
         gsap.to("svg > *", {
             duration: .1,
             opacity: 0,
