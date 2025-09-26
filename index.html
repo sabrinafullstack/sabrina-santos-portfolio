@@ -6,7 +6,7 @@
     <title>Sabrina Santos</title>
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="style/images/favicon.png" type="image/x-icon">
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
@@ -40,7 +40,7 @@
 <section class="hero" id="home">
     <div class="container hero-content">
         <div class="hero-image">
-            <img src="images/hero-image.png" alt="Ilustração Dev">
+            <img src="style/images/hero-image.png" alt="Ilustração Dev">
         </div>
         <div class="hero-text">
             <h1>Software Engineer</h1>
@@ -107,8 +107,6 @@
     </div>
 </section>
 
-<!-- Portfolio -->
-
 
 <!-- Diplomas -->
 <section class="diplomas" id="diplomas">
@@ -146,7 +144,7 @@
                     <div class="carousel-track">
                         <div class="portfolio-item carousel-slide">
                             <div class="slide-image">
-                                <img src="images/panapana.png" alt="Projeto 1">
+                                <img src="style/images/panapana.png" alt="Projeto 1">
                                 <div class="slide-overlay">
                                     <a href="#" class="view-project">Ver Projeto</a>
                                 </div>
@@ -422,7 +420,7 @@
 </div>
     </section>
     <!-- Rodapé -->
-    <footer>
+ <footer>
         <div class="container footer-content">
             <p>&copy; 2025 Sabrina Santos - All rights reserved</p>
             <div class="social-links">
@@ -433,10 +431,31 @@
             </div>
         </div>
     </footer>
+    <!-- SCRIPTS - ORDEM CORRETA -->
+    <script type="module" src="scripts/firebase.js"></script>
     <script src="scripts/form_animated.js"></script>
     <script src="scripts/btn-animation.js"></script>
     <script src="scripts/menu.js"></script>
     <script src="scripts/download.js"></script>
     <script src="scripts/port-carrosel.js"></script>
+
+    <!-- Script de verificação de carregamento -->
+    <script>
+    // Aguardar o carregamento completo da página
+    window.addEventListener('load', function() {
+        console.log("📄 Página totalmente carregada");
+        
+        // Verificar se o Firebase carregou após 3 segundos
+        setTimeout(() => {
+            if (typeof window.submitContactForm === 'function') {
+                console.log("✅ Firebase carregado com sucesso!");
+            } else {
+                console.error("❌ Firebase NÃO carregou!");
+                console.log("Tipo de submitContactForm:", typeof window.submitContactForm);
+            }
+        }, 3000);
+    });
+    </script>
 </body>
+    
 </html>

@@ -111,16 +111,16 @@ nameEl.addEventListener('input', () => {
             color: "rgba(0, 0, 0, " + 0 + ")"
         })
     }
-        subjectEl.addEventListener('input', () => {
-        subjectValid = subjectEl.value.length > 2; // pelo menos 3 caracteres
-        if (subjectValid) {
-            subjectEl.classList.add("valid");
-        } else {
-            subjectEl.classList.remove("valid");
-        }
 });
 
-})
+subjectEl.addEventListener('input', () => {
+    subjectValid = subjectEl.value.length > 2;
+    if (subjectValid) {
+        subjectEl.classList.add("valid");
+    } else {
+        subjectEl.classList.remove("valid");
+    }
+});
 
 emailEl.addEventListener('input', () => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -134,25 +134,108 @@ emailEl.addEventListener('input', () => {
     }
 })
 
-submitBtn.addEventListener('click', () => {
+// EVENTO DO BOTÃO ENVIAR CORRIGIDO
+submitBtn.addEventListener('click', async (e) => {
+    e.preventDefault(); // Evita recarregar a página
+    console.log("Botão clicado - Validações:", {
+        nameValid, 
+        emailValid, 
+        subjectValid, 
+        checkbox: checkboxEl.checked, 
+        sprayRepeatCounter
+    });
+
     if (nameValid && emailValid && subjectValid && checkboxEl.checked && sprayRepeatCounter > 1) {
-        gsap.to("svg > *", {
-            duration: .1,
-            opacity: 0,
-            stagger: {
-                each: 0.03,
-                from: 'random',
-                ease: 'none',
+        console.log("Todas as validações passaram - enviando dados...");
+        
+        const formData = {
+            name: nameEl.value,
+            email: emailEl.value,
+            subject: subjectEl.value,
+            subscribe: checkboxEl.checked
+        };
+
+        // Verifica se a função do Firebase está disponível
+        if (typeof window.submitContactForm !== 'function') {
+            console.error("Função submitContactForm não encontrada!");
+            alert("Erro de configuração. Recarregue a página.");
+            return;
+        }
+
+        try {
+            const success = await window.submitContactForm(formData);
+            console.log("Resposta do Firebase:", success);
+
+            if (success) {
+                alert("Mensagem enviada com sucesso!");
+                
+                // Limpar formulário
+                nameEl.value = "";
+                emailEl.value = "";
+                subjectEl.value = "";
+                checkboxEl.checked = false;
+                
+                // Resetar estados de validação
+                nameValid = false;
+                emailValid = false;
+                subjectValid = false;
+                nameEl.classList.remove("valid");
+                emailEl.classList.remove("valid");
+                subjectEl.classList.remove("valid");
+                
+                // Resetar animações
+                sprayRepeatCounter = 0;
+                gsap.to(submitBtn, {
+                    duration: .3,
+                    color: "rgba(0, 0, 0, 0)"
+                });
+                
+                // Parar engrenagens
+                gearsTls.forEach(tl => {
+                    gsap.to(tl, {
+                        timeScale: 0,
+                        onComplete: () => {
+                            tl.pause();
+                        }
+                    });
+                });
+
+                // Animação de sucesso
+                gsap.to("svg > *", {
+                    duration: .1,
+                    opacity: 0,
+                    stagger: {
+                        each: 0.03,
+                        from: 'random',
+                        ease: 'none',
+                    }
+                });
+                gsap.to(".form-row", {
+                    delay: .4,
+                    duration: .1,
+                    opacity: 0,
+                    stagger: .1
+                });
+            } else {
+                alert("Erro ao enviar mensagem. Tente novamente.");
             }
-        })
-        gsap.to(".form-row", {
-            delay: .4,
-            duration: .1,
-            opacity: 0,
-            stagger: .1
-        })
+        } catch (error) {
+            console.error("Erro no envio:", error);
+            alert("Erro ao conectar com o servidor. Tente novamente.");
+        }
+    } else {
+        console.log("Validações falharam - não enviando");
+        // Mostrar mensagem de erro detalhada
+        let errorMessage = "Por favor, complete:\n";
+        if (!nameValid) errorMessage += "- Nome (mínimo 4 caracteres)\n";
+        if (!emailValid) errorMessage += "- Email válido\n";
+        if (!subjectValid) errorMessage += "- Assunto (mínimo 3 caracteres)\n";
+        if (!checkboxEl.checked) errorMessage += "- Confirme que seus dados estão corretos\n";
+        if (sprayRepeatCounter <= 1) errorMessage += "- Complete a animação das engrenagens\n";
+        
+        alert(errorMessage);
     }
-})
+});
 
 
 function layoutPreparation() {
@@ -566,7 +649,6 @@ function createGearsTimelines() {
 
 function createPullingTimeline(isFixed, BtnPulled) {
     let tl = gsap.timeline({
-        // paused: true,
         defaults: {
             ease: "power1.inOut",
             duration: 1

@@ -217,12 +217,7 @@ nav ul li a:hover::after {
 }
 
 /* ===== PORTFOLIO CARROSSEL MODERNO ===== */
-.portfolio {
-    padding: 80px 20px;
-    background: #fff;
-    position: relative;
-}
-
+/* ===== CARROSSEL ESTÁTICO - SEM MOVIMENTO AUTOMÁTICO ===== */
 .portfolio-carousel {
     position: relative;
     max-width: 1200px;
@@ -241,9 +236,10 @@ nav ul li a:hover::after {
 
 .carousel-track {
     display: flex;
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     gap: 30px;
     padding: 10px 0;
+    /* SEM transição automática - só muda quando o usuário clicar */
+    transition: transform 0.4s ease-in-out;
 }
 
 .carousel-slide {
@@ -258,11 +254,11 @@ nav ul li a:hover::after {
 }
 
 .carousel-slide:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-/* Imagem do slide */
+/* Imagens enquadradas */
 .slide-image {
     position: relative;
     height: 250px;
@@ -280,78 +276,7 @@ nav ul li a:hover::after {
     transform: scale(1.05);
 }
 
-/* Overlay na imagem */
-.slide-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, rgba(242, 5, 5, 0.8), rgba(242, 162, 162, 0.8));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.carousel-slide:hover .slide-overlay {
-    opacity: 1;
-}
-
-.view-project {
-    color: white;
-    text-decoration: none;
-    padding: 12px 24px;
-    border: 2px solid white;
-    border-radius: 25px;
-    font-family: 'SUSE Mono', sans-serif;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.view-project:hover {
-    background: white;
-    color: var(--primary-color);
-}
-
-/* Conteúdo do slide */
-.slide-content {
-    padding: 25px;
-}
-
-.slide-content h3 {
-    font-family: 'SUSE Mono', sans-serif;
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    color: var(--text-color);
-}
-
-.slide-content p {
-    font-family: 'SUSE Mono', sans-serif;
-    font-size: 0.95rem;
-    color: #666;
-    line-height: 1.5;
-    margin-bottom: 15px;
-}
-
-/* Tags de tecnologia */
-.tech-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.tech-tags span {
-    background: var(--secondary-color);
-    color: white;
-    padding: 4px 12px;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    font-family: 'SUSE Mono', sans-serif;
-}
-
-/* Navegação elegante */
+/* Controles de navegação */
 .carousel-nav {
     position: absolute;
     top: 50%;
@@ -389,15 +314,9 @@ nav ul li a:hover::after {
 .carousel-nav:disabled {
     opacity: 0.3;
     cursor: not-allowed;
-    transform: translateY(-50%) scale(1);
 }
 
-.carousel-nav:disabled:hover {
-    background: white;
-    color: var(--primary-color);
-}
-
-/* Indicadores modernos */
+/* Indicadores */
 .carousel-indicators {
     display: flex;
     justify-content: center;
@@ -413,67 +332,27 @@ nav ul li a:hover::after {
     background: transparent;
     cursor: pointer;
     transition: all 0.3s ease;
-    position: relative;
-}
-
-.carousel-indicator::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--primary-color);
-    transition: transform 0.3s ease;
-}
-
-.carousel-indicator.active::after {
-    transform: translate(-50%, -50%) scale(1);
 }
 
 .carousel-indicator.active {
-    border-color: var(--primary-color);
+    background: var(--primary-color);
     transform: scale(1.2);
 }
 
-.carousel-indicator:hover {
-    border-color: var(--secondary-color);
-}
-
-.carousel-indicator:hover::after {
-    background: var(--secondary-color);
-    transform: translate(-50%, -50%) scale(1);
-}
-
-/* ===== RESPONSIVIDADE MELHORADA ===== */
+/* Responsividade */
 @media (max-width: 1024px) {
     .carousel-slide {
         flex: 0 0 calc(50% - 15px);
     }
-    
-    .carousel-wrapper {
-        padding: 0 50px;
-    }
 }
 
 @media (max-width: 768px) {
-    .portfolio {
-        padding: 60px 15px;
-    }
-    
     .carousel-wrapper {
-        padding: 0 15px;
+        padding: 0 40px;
     }
     
     .carousel-slide {
         flex: 0 0 100%;
-        margin: 0 10px;
-    }
-    
-    .carousel-track {
-        gap: 20px;
     }
     
     .carousel-nav {
@@ -481,82 +360,7 @@ nav ul li a:hover::after {
         height: 40px;
         font-size: 1rem;
     }
-    
-    .slide-image {
-        height: 200px;
-    }
-    
-    .slide-content {
-        padding: 20px;
-    }
 }
-
-@media (max-width: 480px) {
-    .portfolio {
-        padding: 40px 10px;
-    }
-    
-    .carousel-wrapper {
-        padding: 0 5px;
-    }
-    
-    .carousel-slide {
-        margin: 0 5px;
-    }
-    
-    .slide-image {
-        height: 180px;
-    }
-    
-    .slide-content {
-        padding: 15px;
-    }
-    
-    .slide-content h3 {
-        font-size: 1.1rem;
-    }
-    
-    .carousel-indicators {
-        margin-top: 20px;
-    }
-}
-
-/* Efeito de foco para acessibilidade */
-.carousel-nav:focus,
-.carousel-indicator:focus {
-    outline: 2px solid var(--secondary-color);
-    outline-offset: 2px;
-}
-
-/* Sombra suave nos lados do carrossel */
-.carousel-wrapper::before,
-.carousel-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 60px;
-    z-index: 2;
-    pointer-events: none;
-}
-
-.carousel-wrapper::before {
-    left: 0;
-    background: linear-gradient(to right, white, transparent);
-}
-
-.carousel-wrapper::after {
-    right: 0;
-    background: linear-gradient(to left, white, transparent);
-}
-
-@media (max-width: 768px) {
-    .carousel-wrapper::before,
-    .carousel-wrapper::after {
-        width: 30px;
-    }
-}
-
 /* ===== DIPLOMAS ===== */
 .diplomas {
     padding: 80px 20px;
