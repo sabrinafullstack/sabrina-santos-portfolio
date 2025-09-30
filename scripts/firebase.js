@@ -6,7 +6,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyAnbpGBP0nekd4lqnZN26ttEnFcxosY844",
   authDomain: "sabrina-santos-portfolio-483c1.firebaseapp.com",
   projectId: "sabrina-santos-portfolio-483c1",
-  storageBucket: "sabrina-santos-portfolio-483c1.firebasestorage.app",
+  storageBucket: "sabrina-santos-portfolio-483c1.appspot.com",
   messagingSenderId: "242644055407",
   appId: "1:242644055407:web:d7c78e85c28b2128e1249a"
 };
