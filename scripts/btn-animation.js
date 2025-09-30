@@ -1,8 +1,8 @@
-// seleciona o botão e a listra
+// btn animatin hero section
 const btn = document.querySelector(".svg-btn");
 const line = btn.querySelector("path");
 
-// anima quando o mouse entra
+// when mouse enters
 btn.addEventListener("mouseenter", () => {
   gsap.to(line, {
     duration: 0.5,
@@ -11,7 +11,7 @@ btn.addEventListener("mouseenter", () => {
   });
 });
 
-// volta quando o mouse sai
+// back when mouse leaves
 btn.addEventListener("mouseleave", () => {
   gsap.to(line, {
     duration: 0.5,

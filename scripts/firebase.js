@@ -15,7 +15,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Função global para enviar formulário
+// Function to submit contact form data to Firestore
 window.submitContactForm = async (formData) => {
   try {
     const docRef = await addDoc(collection(db, "contacts"), {

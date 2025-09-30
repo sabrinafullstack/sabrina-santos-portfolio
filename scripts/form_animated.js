@@ -134,7 +134,7 @@ emailEl.addEventListener('input', () => {
     }
 })
 
-// EVENTO DO BOTÃO ENVIAR CORRIGIDO
+
 submitBtn.addEventListener('click', async (e) => {
     e.preventDefault(); // Evita recarregar a página
     console.log("Botão clicado - Validações:", {
@@ -155,7 +155,7 @@ submitBtn.addEventListener('click', async (e) => {
             subscribe: checkboxEl.checked
         };
 
-        // Verifica se a função do Firebase está disponível
+        // check if the function is available (firebase)
         if (typeof window.submitContactForm !== 'function') {
             console.error("Função submitContactForm não encontrada!");
             alert("Erro de configuração. Recarregue a página.");
@@ -168,29 +168,29 @@ submitBtn.addEventListener('click', async (e) => {
 
             if (success) {
                 alert("Mensagem enviada com sucesso!");
-                
-                // Limpar formulário
+
+                // clear form fields
                 nameEl.value = "";
                 emailEl.value = "";
                 subjectEl.value = "";
                 checkboxEl.checked = false;
                 
-                // Resetar estados de validação
+                // Reset validation states
                 nameValid = false;
                 emailValid = false;
                 subjectValid = false;
                 nameEl.classList.remove("valid");
                 emailEl.classList.remove("valid");
                 subjectEl.classList.remove("valid");
-                
-                // Resetar animações
+
+                // Reset animations
                 sprayRepeatCounter = 0;
                 gsap.to(submitBtn, {
                     duration: .3,
                     color: "rgba(0, 0, 0, 0)"
                 });
-                
-                // Parar engrenagens
+
+                // stop gears animations
                 gearsTls.forEach(tl => {
                     gsap.to(tl, {
                         timeScale: 0,
@@ -200,7 +200,7 @@ submitBtn.addEventListener('click', async (e) => {
                     });
                 });
 
-                // Animação de sucesso
+                // Success animation
                 gsap.to("svg > *", {
                     duration: .1,
                     opacity: 0,
@@ -225,7 +225,7 @@ submitBtn.addEventListener('click', async (e) => {
         }
     } else {
         console.log("Validações falharam - não enviando");
-        // Mostrar mensagem de erro detalhada
+        // show the message with missing fields 
         let errorMessage = "Por favor, complete:\n";
         if (!nameValid) errorMessage += "- Nome (mínimo 4 caracteres)\n";
         if (!emailValid) errorMessage += "- Email válido\n";

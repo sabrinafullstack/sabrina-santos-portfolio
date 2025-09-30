@@ -1,4 +1,6 @@
-// scripts/port-carrosel.js - Versão Simples
+// scripts/port-carrosel   
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const track = document.querySelector('.carousel-track');
     const slides = document.querySelectorAll('.carousel-slide');
@@ -27,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const slideWidth = slides[0].offsetWidth + 30;
         track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
         
-        // Atualiza botões
+        // render btn state
         prev.disabled = currentIndex === 0;
         next.disabled = currentIndex === slides.length - 1;
     }

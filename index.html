@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <!-- Cabeçalho -->
+    <!-- Header -->
     <header>
         <div class="container header-container">
             <a href="#" class="logo">Sabrina<span>Santos</span></a>
@@ -26,11 +26,10 @@
             <nav id="navbar">
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#technologies">Tecnologia</a></li>
-                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#diplomas">Diplomas</a></li>
-                    <li><a href="#contacts">Contatos</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
                 </ul>
             </nav>
         </div>
@@ -63,23 +62,24 @@
     <div class="container about-content">
         <div class="about-text">
             <div class="section-title">
-                <h2>Sobre Mim</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam voluptatibus incidunt magnam molestiae ab omnis fuga odio perferendis illum beatae libero est temporibus repellendus quam voluptatem quae, consequuntur natus veniam.</p>
+                <h2>About Me</h2>
+                <p>Hello, my name is Sabrina, I'm 27 years old, and I currently live in São Paulo, Brazil. I'm transitioning my career after more than six years working in customer service. In my last experience, I experienced significant personal and professional growth: I overcame my shyness, developed my communication skills, and learned to work easily in a team.</p>
+                <p>I've always been interested in the information technology field. The opportunity to create solutions, develop ideas, and solve problems motivates and excites me. Currently, my goal is to specialize as a Java developer, exploring the entire Java ecosystem to create complete, efficient, and robust systems.</p>
             </div>
-            <!-- Conteúdo adicional pode vir aqui -->
         </div>
     </div>
     
     <!-- Infinite Carousel -->
     <div class="icon-carousel">
         <div class="carousel-track">
-            <!-- coloque os ícones/font awesome aqui -->
+
+        
             <i class="fab fa-html5"></i>
             <i class="fab fa-css3-alt"></i>
             <i class="fab fa-js"></i>
             <i class="fab fa-java"></i>
             <i class="fab fa-git-alt"></i>
-            <!-- repete de novo para dar o efeito infinito -->
+            <!-- repeat -->
             <i class="fab fa-html5"></i>
             <i class="fab fa-css3-alt"></i>
             <i class="fab fa-js"></i>
@@ -200,7 +200,7 @@
                             </div>
                         </div>
                         
-                        <!-- Adicione mais projetos -->
+                        <!-- projects... -->
                         <div class="portfolio-item carousel-slide">
                             <div class="slide-image">
                                 <img src="images/project4.png" alt="Projeto 4">
@@ -221,7 +221,7 @@
                     </div>
                 </div>
                 
-                <!--btn do carrossel-->
+                <!--carroussel btn-->
                 <button class="carousel-nav carousel-prev" aria-label="Projeto anterior">
                     <i class="fas fa-chevron-left"></i>
                 </button>
@@ -230,16 +230,16 @@
                 </button>
             </div>
             
-            <!--indicadores do carrossel-->
+            <!--carroussel indicators-->
             <div class="carousel-indicators">
-                <!-- Gerado via JavaScript -->
+                <!--loaded on vanilla JS-->
             </div>
         </div>
     </div>
 </section>
 
-<!-- Formulario -->
-<section class="contact-section" id="contact">
+<!-- Footer -->
+<section class="contact-section" id="contacts">
         <div class="section-title">
                 <h2>Formulário</h2>
                 <p>Preencha com seus dados que entraremos em contato com você!</p>
@@ -261,7 +261,7 @@
             <input type="checkbox" id="subscribe" name="subscribe"> My data is correct!
         </label>
         <div class="form-row">
-            <input type="submit" value="Enviar">
+            <input type="submit" value="Send">
         </div>
     </div>
 
@@ -423,19 +423,21 @@
     </svg>
 </div>
     </section>
-    <!-- Rodapé -->
+    <!-- footer -->
  <footer>
         <div class="container footer-content">
             <p>&copy; 2025 Sabrina Santos - All rights reserved</p>
             <div class="social-links">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
+
+                <a href="https://github.com/sabrinafullstack"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/sabrina-oliveira-937834372/"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://wa.me/5512992432116"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
+        
     </footer>
-    <!-- SCRIPTS - ORDEM CORRETA -->
+
+    <!-- scripts-->
     <script type="module" src="scripts/firebase.js"></script>
     <script src="scripts/form_animated.js"></script>
     <script src="scripts/btn-animation.js"></script>
@@ -443,13 +445,14 @@
     <script src="scripts/download.js"></script>
     <script src="scripts/port-carrosel.js"></script>
 
-    <!-- Script de verificação de carregamento -->
+    <!-- check the script's -->
     <script>
-    // Aguardar o carregamento completo da página
+
+    // check if Firebase loaded
     window.addEventListener('load', function() {
         console.log("📄 Página totalmente carregada");
         
-        // Verificar se o Firebase carregou após 3 segundos
+        // check after 3 seconds if the function is available
         setTimeout(() => {
             if (typeof window.submitContactForm === 'function') {
                 console.log("✅ Firebase carregado com sucesso!");

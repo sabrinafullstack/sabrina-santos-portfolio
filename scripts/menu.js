@@ -6,7 +6,7 @@ menuToggle.addEventListener("click", () => {
     navbar.classList.toggle("open");
 });
 
-  // fecha o menu ao clicar em um link
+  // close menu when clicking a link 
 document.querySelectorAll("#navbar a").forEach(link => {
     link.addEventListener("click", () => {
         menuToggle.classList.remove("active");

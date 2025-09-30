@@ -3,7 +3,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
-/* ===== VARIÁVEIS E RESET ===== */
+/* ===== Variables and reseat ===== */
 :root {
     --secondary-color: #F2A2A2;
     --primary-color: #F20505;
@@ -94,7 +94,7 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
-/* ===== HERO SECTION ===== */
+/* ===== Hero section :) ===== */
 .hero {
     padding: 80px 0;
     background: #fff;
@@ -140,7 +140,7 @@ nav ul li a:hover::after {
     margin-bottom: 2rem;
 }
 
-/* ===== ABOUT SECTION ===== */
+/* ===== About section :) ===== */
 .about-me {
     padding: 80px 0;
     background: #fff;
@@ -185,7 +185,7 @@ nav ul li a:hover::after {
     line-height: 1.5;
 }
 
-/* ===== ICON CAROUSEL ===== */
+/* ===== Icon carrousel ===== */
 .icon-carousel {
     overflow: hidden;
     width: 100%;
@@ -216,8 +216,7 @@ nav ul li a:hover::after {
     }
 }
 
-/* ===== PORTFOLIO CARROSSEL MODERNO ===== */
-/* ===== CARROSSEL ESTÁTICO - SEM MOVIMENTO AUTOMÁTICO ===== */
+/* ===== Portfolio and family  ===== */
 .portfolio-carousel {
     position: relative;
     max-width: 1200px;
@@ -258,7 +257,7 @@ nav ul li a:hover::after {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-/* Imagens enquadradas */
+/* framed images */
 .slide-image {
     position: relative;
     height: 250px;
@@ -276,7 +275,7 @@ nav ul li a:hover::after {
     transform: scale(1.05);
 }
 
-/* Controles de navegação */
+/* navigation controls */
 .carousel-nav {
     position: absolute;
     top: 50%;
@@ -316,7 +315,7 @@ nav ul li a:hover::after {
     cursor: not-allowed;
 }
 
-/* Indicadores */
+/* Indicators */
 .carousel-indicators {
     display: flex;
     justify-content: center;
@@ -339,7 +338,7 @@ nav ul li a:hover::after {
     transform: scale(1.2);
 }
 
-/* Responsividade */
+/* Responsivity */
 @media (max-width: 1024px) {
     .carousel-slide {
         flex: 0 0 calc(50% - 15px);
@@ -361,7 +360,7 @@ nav ul li a:hover::after {
         font-size: 1rem;
     }
 }
-/* ===== DIPLOMAS ===== */
+/* ===== Diplomas :) ===== */
 .diplomas {
     padding: 80px 20px;
     background: #fff;
@@ -394,7 +393,7 @@ nav ul li a:hover::after {
     transform: scale(1.05) rotate(1deg);
 }
 
-/* ===== BUTTON STYLES ===== */
+/* btn styles */
 .svg-btn {
     background: transparent;
     border: none;
@@ -429,7 +428,7 @@ nav ul li a:hover::after {
     transition: transform .12s ease;
 }
 
-/* ===== BOTÃO DOWNLOAD ===== */
+/* download btn */
 .download-btn {
     position: relative;
     transition: all 0.3s ease;
@@ -439,10 +438,11 @@ nav ul li a:hover::after {
     transform: translateY(-2px);
 }
 
-/* Efeito de loading durante o download */
-.download-btn.loading .label {
+/* loading effect during download */
+/*.download-btn.loading .label {
     opacity: 0.7;
 }
+*/
 
 .download-btn.loading::after {
     content: '';
@@ -463,7 +463,7 @@ nav ul li a:hover::after {
     100% { transform: rotate(360deg); }
 }
 
-/* Feedback visual após download */
+/* Feedback view */
 .download-btn.success .label::after {
     content: ' ✓';
     color: green;
@@ -478,7 +478,7 @@ nav ul li a:hover::after {
     gap: 10px;
 }
 
-/* ===== CONTACT SECTION ===== */
+/* ===== contact section ===== */
 .contact-section {
     background-color: #fff;
     padding: 100px 0;
@@ -489,7 +489,7 @@ nav ul li a:hover::after {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    height: 1000px; /* Altura igual ao SVG */
+    height: 1000px; 
 }
 
 .contact-machine-wrapper .form-container,
@@ -637,7 +637,7 @@ footer {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* ===== RESPONSIVIDADE ===== */
+/* ===== Responsivity ===== */
 @media (max-width: 768px) {
     .header-container {
         padding: 1rem 20px;
