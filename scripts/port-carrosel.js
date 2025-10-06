@@ -1,39 +1,41 @@
-// scripts/port-carrosel   
+const track = document.querySelector('.project-track');
+const slides = Array.from(track.children);
+const nextBtn = document.querySelector('.project-carousel .next');
+const prevBtn = document.querySelector('.project-carousel .prev');
 
+let currentIndex = 0;
+let autoSlideInterval;
 
-document.addEventListener('DOMContentLoaded', function() {
-    const track = document.querySelector('.carousel-track');
-    const slides = document.querySelectorAll('.carousel-slide');
-    const prev = document.querySelector('.carousel-prev');
-    const next = document.querySelector('.carousel-next');
-    
-    if (!track) return;
-    
-    let currentIndex = 0;
-    
-    prev.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel();
-        }
-    });
-    
-    next.addEventListener('click', () => {
-        if (currentIndex < slides.length - 1) {
-            currentIndex++;
-            updateCarousel();
-        }
-    });
-    
-    function updateCarousel() {
-        const slideWidth = slides[0].offsetWidth + 30;
-        track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-        
-        // render btn state
-        prev.disabled = currentIndex === 0;
-        next.disabled = currentIndex === slides.length - 1;
-    }
-    
-    // Inicializa
+function updateCarousel() {
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+}
+
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
     updateCarousel();
-});
+}
+
+function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateCarousel();
+}
+
+nextBtn.addEventListener('click', nextSlide);
+prevBtn.addEventListener('click', prevSlide);
+
+// Auto-slide every 5s
+function startAutoSlide() {
+    autoSlideInterval = setInterval(nextSlide, 5000);
+}
+
+function stopAutoSlide() {
+    clearInterval(autoSlideInterval);
+}
+
+track.addEventListener('mouseenter', stopAutoSlide);
+track.addEventListener('mouseleave', startAutoSlide);
+
+// Start on load
+updateCarousel();
+startAutoSlide();
