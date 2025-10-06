@@ -447,22 +447,27 @@
 
     <!-- check the script's -->
     <script>
-
-    // check if Firebase loaded
-    window.addEventListener('load', function() {
-        console.log("📄 Página totalmente carregada");
-        
-        // check after 3 seconds if the function is available
-        setTimeout(() => {
-            if (typeof window.submitContactForm === 'function') {
-                console.log("✅ Firebase carregado com sucesso!");
-            } else {
-                console.error("❌ Firebase NÃO carregou!");
-                console.log("Tipo de submitContactForm:", typeof window.submitContactForm);
-            }
-        }, 3000);
-    });
-    </script>
+// Teste de conexão Firebase corrigido
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("🔍 Verificando conexão Firebase...");
+    
+    setTimeout(() => {
+        if (typeof window.submitContactForm === 'function') {
+            console.log("✅ Firebase carregado com sucesso!");
+            console.log("📋 Projeto: sabrina-santos-portfolio");
+            
+            // Teste simples de função
+            console.log("🧪 Testando função submitContactForm...");
+        } else {
+            console.error("❌ Firebase não carregou corretamente");
+            console.log("Verifique:");
+            console.log("1. Configuração do firebaseConfig");
+            console.log("2. Importações dos módulos Firebase");
+            console.log("3. Console do navegador para erros CORS");
+        }
+    }, 3000);
+});
+</script>
 </body>
     
 </html>

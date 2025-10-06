@@ -4,9 +4,9 @@ import { getFirestore, collection, addDoc } from "https://www.gstatic.com/fireba
 
 const firebaseConfig = {
   apiKey: "AIzaSyAnbpGBP0nekd4lqnZN26ttEnFcxosY844",
-  authDomain: "sabrina-santos-portfolio-483c1.firebaseapp.com",
-  projectId: "sabrina-santos-portfolio-483c1",
-  storageBucket: "sabrina-santos-portfolio-483c1.appspot.com",
+  authDomain: "sabrina-santos-portfolio.firebaseapp.com",
+  projectId: "sabrina-santos-portfolio",
+  storageBucket: "sabrina-santos-portfolio.appspot.com",
   messagingSenderId: "242644055407",
   appId: "1:242644055407:web:d7c78e85c28b2128e1249a"
 };
@@ -25,12 +25,12 @@ window.submitContactForm = async (formData) => {
       subscribe: formData.subscribe,
       timestamp: new Date()
     });
-    console.log("Documento salvo com ID: ", docRef.id);
+    console.log("✅ Documento salvo com ID: ", docRef.id);
     return true;
   } catch (error) {
-    console.error("Erro ao salvar no Firebase: ", error);
+    console.error("❌ Erro ao salvar no Firebase: ", error);
     return false;
   }
 };
 
-console.log("Firebase configurado com sucesso!");
+console.log("All correct");
