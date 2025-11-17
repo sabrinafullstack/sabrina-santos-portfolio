@@ -152,7 +152,7 @@ nav ul li a:hover::after {
     align-items: center;
     gap: 4rem;
     margin-bottom: 3rem;
-    max-width: 100%;
+    max-width: 800px;
     overflow: hidden;
 }
 
